@@ -19,7 +19,7 @@
   }
 
   .container-narrow {
-    max-width: 800px;
+    max-width: 730px;
     margin-inline: auto;
     padding-inline: 12px;
   }
@@ -81,6 +81,16 @@
   .row {
     display: flex;
     flex-direction: row;
+  }
+  .mb-4 {
+    margin-block-end: 4rem;
+  }
+  .mb-2 {
+    margin-block-end: 2rem;
+  }
+
+  .text-center {
+    text-align: center;
   }
 }
 

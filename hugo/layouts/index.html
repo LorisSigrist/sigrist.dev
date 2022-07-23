@@ -4,7 +4,7 @@
         {{ .Content }}
     </section>
 
-    <h1>Blog</h1>
+    <h1 class="mb-4 text-center">Blog</h1>
     <section role="feed pt-4">
         {{ range ( where .Site.RegularPages "Type" "blog" ) }}
 
