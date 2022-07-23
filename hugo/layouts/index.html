@@ -1,19 +1,32 @@
 {{ define "main" }}
+<main class="container-narrow pt-4">
+    <section>
+        {{ .Content }}
+    </section>
 
-<section>
-    {{ .Content }}
+    <h1>Blog</h1>
+    <section role="feed pt-4">
+        {{ range ( where .Site.RegularPages "Type" "blog" ) }}
 
-</section>
+        <article class="post-preview" aria-setsize="-1">
+            <a class="heading" href="{{.Page.Permalink}}">{{ .Title }}</a>
+            <p class="summary">{{ .Params.description }}</p>
+            <div class="row">
+                {{ if isset .Params "tags"}}
+                    <ul class="tag-list">
+                        {{ range $name := .Params.tags}}
+                        <li>{{$name | markdownify}}</li>
+                        {{end}}
+                    </ul>
+                {{end}}
 
+                <span class="publishing-date">
+                    <time datetime="{{ .Params.date }}">{{ .Params.date.Format "2. January 2006" }}</time>
+                </span>
+            </div>
 
-
-<section role="feed">
-    {{ range first 10 ( where .Site.RegularPages "Type" "blog" ) }}
-        <article class="blog-post-preview" aria-setsize="-1">
-            <h4>{{ .Title }}</h4>
-            <p>{{ .Params.description }}</p>
         </article>
-    {{ end }}
-</section>
-
+        {{ end }}
+    </section>
+</main>
 {{ end }}

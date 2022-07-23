@@ -1,4 +1,4 @@
-@layer base, utilities;
+@layer base, typography, utilities;
 
 @layer base {
   body,
@@ -8,16 +8,84 @@
   }
 
   * {
-    box-sizing: border-box:
+    box-sizing: border-box;
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: #111111;
+    background-color: rgb(22, 22, 22);
     color: white;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin-inline: auto;
+    padding-inline: 12px;
+  }
+
+  .post-preview {
+    margin-bottom: 24px;
+  }
+  .post-preview .heading {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-block-end: 0px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .post-preview .heading:hover {
+    text-decoration: underline;
+  }
+
+  .post-preview .summary {
+    margin-block: 0px;
+    font-size: 16px;
+    opacity: 0.6;
+    margin-block: 8px;
+  }
+
+  .post-preview .row {
+    justify-content: space-between;
+    align-items:center;
+    font-size: 16px;
+  }
+  .post-preview .tag-list {
+    list-style: none;
+    padding-inline-start: 0px;
+    color: red;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-block: 0px;
+  }
+  .post-preview .tag-list li:not(:first-child)::before{
+    content: "⋅";
+    padding-inline: 2px;
+  }
+  .post-preview .publishing-date {
+    opacity: 0.4;
   }
 }
 
 @layer utilities {
+  .pt-8 {
+    padding-block-start: 8rem;
+  }
+  .pt-4 {
+    padding-block-start: 4rem;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
+@layer typography {
+  .prose h1 {
+    font-size: 32px;
+  }
 }

@@ -4,5 +4,6 @@ description: ""
 author: "Loris Sigrist"
 date: {{ .Date }}
 draft: true
+tags: 
 ---
 
