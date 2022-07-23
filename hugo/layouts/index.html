@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<section>
+    {{ .Content }}
+
+</section>
+
+
+
+<section role="feed">
+    {{ range first 10 ( where .Site.RegularPages "Type" "blog" ) }}
+        <article class="blog-post-preview" aria-setsize="-1">
+            <h4>{{ .Title }}</h4>
+            <p>{{ .Params.description }}</p>
+        </article>
+    {{ end }}
+</section>
+
+{{ end }}

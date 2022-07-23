@@ -1,0 +1,23 @@
+@layer base, utilities;
+
+@layer base {
+  body,
+  html {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  * {
+    box-sizing: border-box:
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #111111;
+    color: white;
+  }
+}
+
+@layer utilities {
+
+}

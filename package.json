@@ -1,0 +1,15 @@
+{
+  "name": "sigrist.dev",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "scripts": {
+    "build": "cd ./hugo && hugo",
+    "dev": "cd ./hugo && hugo server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Loris Sigrist",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss-cli": "^10.0.0"
+  }
+}

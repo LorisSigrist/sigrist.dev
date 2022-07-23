@@ -1,0 +1,4 @@
+baseURL = 'https://sigrist.dev/'
+languageCode = 'en-us'
+title = 'Loris Sigrist'
+publishDir = "../public"

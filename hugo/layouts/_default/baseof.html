@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="generator" content="Hugo">
+
+    {{ if .Params.description }}
+    <meta name="description" content="{{ .Params.description }}">
+    {{ end }}
+
+    {{ if .Params.author }}
+    <meta name="author" content="{{ .Params.author }}">
+    {{ end }}
+
+    {{ if .Params.date}}
+    <meta name="date.created" content="{{ .Params.date }}">
+    <meta name="time" content="{{ .Params.date }}">
+    {{ end }}
+
+    <title>
+        {{ block "title" . }}
+        {{ .Site.Title }}
+        {{ end }}
+    </title>
+
+    {{ $css := resources.Get "/css/main.css" | resources.PostCSS | minify | fingerprint | resources.PostProcess}}
+    <link rel="stylesheet" type="text/css" href="{{$css.Permalink}}">
+</head>
+
+<body>
+    <!-- Code that all your templates share, like a header -->
+    {{ block "main" . }}
+    <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+</body>
+
+</html>
