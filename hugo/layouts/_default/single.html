@@ -1,5 +1,10 @@
 {{ define "main" }}
-<main class="container-narrow pt-4 prose">
+<main class="container-narrow mt-4 mb-4 prose">
+    <p class="post-metadata">
+        <span><time datetime="{{ .Params.date }}">{{ .Params.date.Format "2 January 2006" }}</time></span>
+        <span>&CenterDot;</span>
+        <span>{{ .Params.author }}</span>
+    </p>
     {{ .Content }}
 </main>
 {{ end }}
